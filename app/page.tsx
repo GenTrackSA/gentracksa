@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { features, steps } from "@/components/Sections";
@@ -172,10 +173,10 @@ export default function Home() {
 }
 
 function ContactForm() {
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [message, setMessage] = React.useState("");
-  const [status, setStatus] = React.useState<null | "loading" | "sent" | "error">(null);
+const [name, setName] = useState("");
+const [email, setEmail] = useState("");
+const [message, setMessage] = useState("");
+const [status, setStatus] = useState<null | "loading" | "sent" | "error">(null);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
