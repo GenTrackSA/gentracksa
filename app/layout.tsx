@@ -9,11 +9,6 @@ export const metadata: Metadata = {
   description: "Wildlife genetics services: species ID, parentage, population genetics, NIGS, and eDNA for African wildlife managers and breeders.",
 };
 
-export const metadata: Metadata = {
-  title: "GenTrack SA — Wildlife Genetics Consulting",
-  description: "Wildlife genetics that turns DNA into decisions.",
-};
-
   export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
