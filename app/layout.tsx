@@ -1,12 +1,11 @@
-import type { Metadata } from "next";
-import "./globals.css";
 import "./globals.css";
 import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Gen-Track SA | Wildlife Genetics Consulting",
-  description: "Wildlife genetics services: species ID, parentage, population genetics, NIGS, and eDNA for African wildlife managers and breeders.",
+  description:
+    "Wildlife genetics services: species ID, parentage, population genetics, NIGS, and eDNA for African wildlife managers and breeders.",
 };
 
   export default function RootLayout({ children }: { children: React.ReactNode }) {
