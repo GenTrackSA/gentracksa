@@ -54,15 +54,15 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold">Core services</h2>
           <a href="#contact" className="text-emerald-300 hover:underline">Need something bespoke?</a>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((f) => (
-            <a key={f.title} href={f.href} className="rounded-3xl p-6 border border-white/10 bg-white/5 hover:bg-white/[0.07] block">
-              <h3 className="mt-1 text-xl font-semibold">{f.title}</h3>
-              <p className="mt-2 text-slate-300">{f.desc}</p>
-              <div className="mt-4 inline-flex items-center gap-1 text-emerald-300 text-sm">Learn more →</div>
-            </a>
-          ))}
-        </div>
+         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+           {features.map((f) => (
+             <a key={f.title} href={f.href} className="rounded-3xl p-6 border border-white/10 bg-white/5 hover:bg-white/[0.07] block">
+             <h3 className="mt-1 text-xl font-semibold">{f.title}</h3>
+             <p className="mt-2 text-slate-300">{f.desc}</p>
+             <div className="mt-4 inline-flex items-center gap-1 text-emerald-300 text-sm">Learn more →</div>
+           </a>
+         ))}
+       </div>
       </section>
 
       {/* Process */}
