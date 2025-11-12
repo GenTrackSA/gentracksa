@@ -9,7 +9,7 @@ export default function ParentageLineage() {
     <div className="min-h-screen">
       <Navbar />
 
-      {/* Breadcrumbs JSON-LD */}
+      {/* JSON-LD: Breadcrumbs */}
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -21,7 +21,7 @@ export default function ParentageLineage() {
         }}
       />
 
-      {/* Service JSON-LD */}
+      {/* JSON-LD: Service */}
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -33,10 +33,7 @@ export default function ParentageLineage() {
           provider: { "@type": "Organization", name: "Gen-Track SA", url: "https://www.gentracksa.co.za" },
           areaServed: { "@type": "Country", name: "South Africa" },
           serviceType: "Wildlife genetics testing",
-          termsOfService: "https://www.gentracksa.co.za",
-          availableChannel: { "@type": "ServiceChannel", serviceUrl: url, availableLanguage: ["en"] },
-          brand: { "@type": "Brand", name: "Gen-Track SA" },
-          offers: { "@type": "Offer", priceCurrency: "ZAR", price: "0", availability: "https://schema.org/InStock" }
+          brand: { "@type": "Brand", name: "Gen-Track SA" }
         }}
       />
 
@@ -59,7 +56,7 @@ export default function ParentageLineage() {
           <div>
             <h3 className="font-semibold">Workflow</h3>
             <p className="text-slate-300 mt-2">
-              Sampling kit → DNA extraction → genotyping (microsats/SNPs) → likelihood or exclusion analyses → report.
+              Sampling kit → DNA extraction → genotyping (microsats/SNPs) → likelihood/exclusion analyses → report.
             </p>
           </div>
           <div>
@@ -72,15 +69,11 @@ export default function ParentageLineage() {
           </div>
         </section>
 
-        <section className="mt-8">
-          <h2 className="text-xl font-semibold">Turnaround</h2>
-          <p className="text-slate-300 mt-2">10–15 working days for typical cohorts; multi-hundred sample sets by schedule.</p>
-        </section>
-
         <a href="/#contact" className="inline-block mt-10 rounded-2xl px-5 py-3 bg-emerald-500 text-slate-950 font-semibold">
           Enquire about panels
         </a>
       </article>
+
       <Footer />
     </div>
   );
