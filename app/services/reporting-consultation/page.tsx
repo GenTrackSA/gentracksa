@@ -1,42 +1,62 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+
+const url = "https://www.gentracksa.co.za/services/reporting-consultation";
 
 export default function ReportingConsultation() {
   return (
     <div className="min-h-screen">
       <Navbar />
+
+      {/* JSON-LD: Breadcrumbs */}
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Services", item: "https://www.gentracksa.co.za/services" },
+            { "@type": "ListItem", position: 2, name: "Reporting & Consultation", item: url }
+          ]
+        }}
+      />
+
+      {/* JSON-LD: Service */}
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Reporting, Consultation & Data Management",
+          url,
+          description:
+            "Comprehensive interpretation and visual reporting of genetic data, with direct consultation and long-term data management options.",
+          provider: { "@type": "Organization", name: "Gen-Track SA", url: "https://www.gentracksa.co.za" },
+          areaServed: { "@type": "Country", name: "South Africa" },
+          serviceType: "Scientific consulting",
+          brand: { "@type": "Brand", name: "Gen-Track SA" }
+        }}
+      />
+
       <article className="container py-16 max-w-3xl">
-        <h1 className="text-3xl md:text-4xl font-bold">Reporting & Decision Support</h1>
+        <h1 className="text-3xl md:text-4xl font-bold">Reporting, Consultation & Data Management</h1>
         <p className="text-slate-300 mt-3">
-          Turn raw genetics into clear, actionable decisions. We deliver manager-ready reports, visualisations, and consultation aligned to your goals.
+          We transform raw genetic results into clear, actionable insights with visual reports, consultations, and long-term data storage options.
         </p>
 
-        <section className="mt-8 grid md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="font-semibold">What’s included</h3>
-            <ul className="mt-2 list-disc pl-5 text-slate-300 space-y-1">
-              <li>Plain-language executive summary.</li>
-              <li>Figures, tables, and GIS layers.</li>
-              <li>Recommendations and next-step options.</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold">Options</h3>
-            <ul className="mt-2 list-disc pl-5 text-slate-300 space-y-1">
-              <li>Slide deck + live debrief.</li>
-              <li>Data stewardship & backups.</li>
-              <li>Template SOPs for future sampling.</li>
-            </ul>
-          </div>
-        </section>
-
         <section className="mt-8">
-          <h2 className="text-xl font-semibold">Timeline</h2>
-          <p className="text-slate-300 mt-2">Most reports delivered within 2–3 weeks of lab completion; expedited options available.</p>
+          <h2 className="text-xl font-semibold">Deliverables</h2>
+          <ul className="mt-2 list-disc pl-5 text-slate-300 space-y-1">
+            <li>Visual genetic summaries and management recommendations.</li>
+            <li>One-on-one consultation for interpretation.</li>
+            <li>Secure, cloud-based data archiving and metadata curation.</li>
+          </ul>
         </section>
 
-        <a href="/#contact" className="inline-block mt-10 rounded-2xl px-5 py-3 bg-emerald-500 text-slate-950 font-semibold">Book a consult</a>
+        <a href="/#contact" className="inline-block mt-10 rounded-2xl px-5 py-3 bg-emerald-500 text-slate-950 font-semibold">
+          Request consultation
+        </a>
       </article>
+
       <Footer />
     </div>
   );
