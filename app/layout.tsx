@@ -1,8 +1,8 @@
 // app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
+import Script from "next/script";
 import JsonLd from "@/components/JsonLd";
-import Analytics from "@/components/Analytics";
 
 export const metadata: Metadata = {
   title: "Gen-Track SA | Wildlife Genetics Consulting",
@@ -11,10 +11,26 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   return (
     <html lang="en">
       <body>
-        <Analytics />
+        {/* GA4 inline (no external component/import) */}
+        {GA_ID && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+              `}
+            </Script>
+          </>
+        )}
+
         {children}
 
         {/* Organization JSON-LD */}
