@@ -21,7 +21,7 @@ export default function SpeciesIdentification() {
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "Species Identification",
-          "url": url,
+          "url": "https://www.gentracksa.co.za/services/species-identification",
           "description": "DNA-based species confirmation and hybrid detection using mitochondrial and nuclear markers for compliance, trade, and forensic use.",
           "provider": { "@type": "Organization", "name": "Gen-Track SA", "url": "https://www.gentracksa.co.za" },
           "areaServed": { "@type": "Country", "name": "South Africa" },
