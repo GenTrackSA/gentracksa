@@ -2,36 +2,44 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 
+const url = "https://www.gentracksa.co.za/services/parentage-lineage";
+
 export default function ParentageLineage() {
   return (
     <div className="min-h-screen">
       <Navbar />
+
+      {/* Breadcrumbs JSON-LD */}
       <JsonLd
         data={{
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Services", "item": "https://www.gentracksa.co.za/services" },
-            { "@type": "ListItem", "position": 2, "name": "Species Identification", "item": url }
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Services", item: "https://www.gentracksa.co.za/services" },
+            { "@type": "ListItem", position: 2, name: "Parentage & Lineage", item: url }
           ]
         }}
       />
+
+      {/* Service JSON-LD */}
       <JsonLd
         data={{
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Parentage & Lineage Testing",
-          "url": url,
-          "description": "Microsatellite/SNP-based parentage assignment and pedigree verification to manage inbreeding and prove lineage for game breeding and auctions.",
-          "provider": { "@type": "Organization", "name": "Gen-Track SA", "url": "https://www.gentracksa.co.za" },
-          "areaServed": { "@type": "Country", "name": "South Africa" },
-          "serviceType": "Wildlife genetics testing",
-          "termsOfService": "https://www.gentracksa.co.za",
-          "availableChannel": { "@type": "ServiceChannel", "serviceUrl": url, "availableLanguage": ["en"] },
-          "brand": { "@type": "Brand", "name": "Gen-Track SA" },
-          "offers": { "@type": "Offer", "priceCurrency": "ZAR", "price": "0", "availability": "https://schema.org/InStock" }
+          name: "Parentage & Lineage Testing",
+          url,
+          description:
+            "Microsatellite/SNP-based parentage assignment and pedigree verification to manage inbreeding and prove lineage for game breeding and auctions.",
+          provider: { "@type": "Organization", name: "Gen-Track SA", url: "https://www.gentracksa.co.za" },
+          areaServed: { "@type": "Country", name: "South Africa" },
+          serviceType: "Wildlife genetics testing",
+          termsOfService: "https://www.gentracksa.co.za",
+          availableChannel: { "@type": "ServiceChannel", serviceUrl: url, availableLanguage: ["en"] },
+          brand: { "@type": "Brand", name: "Gen-Track SA" },
+          offers: { "@type": "Offer", priceCurrency: "ZAR", price: "0", availability: "https://schema.org/InStock" }
         }}
       />
+
       <article className="container py-16 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-bold">Parentage & Lineage Testing</h1>
         <p className="text-slate-300 mt-3">
@@ -50,7 +58,9 @@ export default function ParentageLineage() {
         <section className="mt-8 grid md:grid-cols-2 gap-6">
           <div>
             <h3 className="font-semibold">Workflow</h3>
-            <p className="text-slate-300 mt-2">Sampling kit → DNA extraction → genotyping (microsats/SNPs) → likelihood or exclusion analyses → report.</p>
+            <p className="text-slate-300 mt-2">
+              Sampling kit → DNA extraction → genotyping (microsats/SNPs) → likelihood or exclusion analyses → report.
+            </p>
           </div>
           <div>
             <h3 className="font-semibold">Deliverables</h3>
@@ -67,7 +77,9 @@ export default function ParentageLineage() {
           <p className="text-slate-300 mt-2">10–15 working days for typical cohorts; multi-hundred sample sets by schedule.</p>
         </section>
 
-        <a href="/#contact" className="inline-block mt-10 rounded-2xl px-5 py-3 bg-emerald-500 text-slate-950 font-semibold">Enquire about panels</a>
+        <a href="/#contact" className="inline-block mt-10 rounded-2xl px-5 py-3 bg-emerald-500 text-slate-950 font-semibold">
+          Enquire about panels
+        </a>
       </article>
       <Footer />
     </div>
