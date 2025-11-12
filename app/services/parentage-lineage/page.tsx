@@ -1,10 +1,37 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 
 export default function ParentageLineage() {
   return (
     <div className="min-h-screen">
       <Navbar />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Services", "item": "https://www.gentracksa.co.za/services" },
+            { "@type": "ListItem", "position": 2, "name": "Species Identification", "item": url }
+          ]
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Parentage & Lineage Testing",
+          "url": url,
+          "description": "Microsatellite/SNP-based parentage assignment and pedigree verification to manage inbreeding and prove lineage for game breeding and auctions.",
+          "provider": { "@type": "Organization", "name": "Gen-Track SA", "url": "https://www.gentracksa.co.za" },
+          "areaServed": { "@type": "Country", "name": "South Africa" },
+          "serviceType": "Wildlife genetics testing",
+          "termsOfService": "https://www.gentracksa.co.za",
+          "availableChannel": { "@type": "ServiceChannel", "serviceUrl": url, "availableLanguage": ["en"] },
+          "brand": { "@type": "Brand", "name": "Gen-Track SA" },
+          "offers": { "@type": "Offer", "priceCurrency": "ZAR", "price": "0", "availability": "https://schema.org/InStock" }
+        }}
+      />
       <article className="container py-16 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-bold">Parentage & Lineage Testing</h1>
         <p className="text-slate-300 mt-3">
