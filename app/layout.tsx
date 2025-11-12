@@ -9,6 +9,19 @@ export const metadata: Metadata = {
     "Wildlife genetics services: species ID, parentage, population genetics, NIGS, and eDNA for African wildlife managers and breeders.",
 };
 
+import Analytics from "@/components/Analytics";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body>
+        <Analytics />
+        {children}
+      </body>
+    </html>
+  );
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
