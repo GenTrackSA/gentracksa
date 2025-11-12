@@ -1,42 +1,62 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 
-export default function NIGS() {
+const url = "https://www.gentracksa.co.za/services/non-invasive-genetics";
+
+export default function NonInvasiveGenetics() {
   return (
     <div className="min-h-screen">
       <Navbar />
+
+      {/* JSON-LD: Breadcrumbs */}
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Services", item: "https://www.gentracksa.co.za/services" },
+            { "@type": "ListItem", position: 2, name: "Non-Invasive Genetic Sampling", item: url }
+          ]
+        }}
+      />
+
+      {/* JSON-LD: Service */}
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Non-Invasive Genetic Sampling (NIGS)",
+          url,
+          description:
+            "Genetic monitoring using dung, hair, or environmental samples to estimate abundance and diversity without disturbing wildlife.",
+          provider: { "@type": "Organization", name: "Gen-Track SA", url: "https://www.gentracksa.co.za" },
+          areaServed: { "@type": "Country", name: "South Africa" },
+          serviceType: "Wildlife monitoring and genetics",
+          brand: { "@type": "Brand", name: "Gen-Track SA" }
+        }}
+      />
+
       <article className="container py-16 max-w-3xl">
-        <h1 className="text-3xl md:text-4xl font-bold">Non-invasive Genetics (NIGS)</h1>
+        <h1 className="text-3xl md:text-4xl font-bold">Non-Invasive Genetic Sampling</h1>
         <p className="text-slate-300 mt-3">
-          Estimate abundance, sex ratios, and diversity using dung and hair DNA—ideal for elusive or sensitive species without capture stress.
+          Collect DNA data without capturing animals. NIGS enables mark–recapture and sex ratio estimates with minimal disturbance.
         </p>
 
-        <section className="mt-8 grid md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="font-semibold">Design & Models</h3>
-            <p className="text-slate-300 mt-2">Spatial sampling design → multi-occasion capture histories → POPAN/Jolly-Seber or SECR models for abundance/density.</p>
-          </div>
-          <div>
-            <h3 className="font-semibold">Sampling kits</h3>
-            <ul className="mt-2 list-disc pl-5 text-slate-300 space-y-1">
-              <li>Faecal tubes with preservative & barcodes.</li>
-              <li>GPS form & chain-of-custody templates.</li>
-              <li>Field protocol cards and training call.</li>
-            </ul>
-          </div>
-        </section>
-
         <section className="mt-8">
-          <h2 className="text-xl font-semibold">Deliverables & timeline</h2>
+          <h2 className="text-xl font-semibold">Applications</h2>
           <ul className="mt-2 list-disc pl-5 text-slate-300 space-y-1">
-            <li>Estimator outputs with CIs and diagnostics.</li>
-            <li>Map layers & effort summaries for reports.</li>
-            <li>Typical pilot: 4–8 weeks depending on scale.</li>
+            <li>Abundance estimation using genetic mark–recapture models.</li>
+            <li>Sex determination through amelogenin gene markers.</li>
+            <li>Monitoring elusive or endangered species.</li>
           </ul>
         </section>
 
-        <a href="/#contact" className="inline-block mt-10 rounded-2xl px-5 py-3 bg-emerald-500 text-slate-950 font-semibold">Scope a NIGS survey</a>
+        <a href="/#contact" className="inline-block mt-10 rounded-2xl px-5 py-3 bg-emerald-500 text-slate-950 font-semibold">
+          Request a NIGS survey
+        </a>
       </article>
+
       <Footer />
     </div>
   );
