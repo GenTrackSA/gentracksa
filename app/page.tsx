@@ -27,9 +27,9 @@ export default function Home() {
   </div>
 
   {/* Warm safari overlays (on top of image, but behind text) */}
-  <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#f6f2e8]/55 via-[#f6f2e8]/35 to-[#f6f2e8]/85" />
-  <div className="absolute inset-0 z-10 bg-[radial-gradient(60%_60%_at_20%_10%,rgba(214,199,166,0.50),transparent_70%)]" />
-  <div className="absolute inset-0 z-10 bg-[radial-gradient(50%_50%_at_80%_15%,rgba(122,140,88,0.22),transparent_70%)]" />
+<div className="absolute inset-0 z-10 bg-gradient-to-b from-black/20 via-transparent to-[#f6f2e8]/55" />
+<div className="absolute inset-0 z-10 bg-[radial-gradient(60%_60%_at_20%_10%,rgba(214,199,166,0.22),transparent_75%)]" />
+<div className="absolute inset-0 z-10 bg-[radial-gradient(50%_50%_at_80%_15%,rgba(122,140,88,0.14),transparent_75%)]" />
 
   {/* Content */}
   <div className="container relative z-20 py-20 md:py-28">
