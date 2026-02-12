@@ -12,72 +12,73 @@ export default function Home() {
     <div className="min-h-screen bg-[#f6f2e8] text-[#1f1f1f]">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="/hero-rhino1.jpeg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
+{/* Hero */}
+<section className="relative overflow-hidden isolate">
+  {/* Background image */}
+  <div className="absolute inset-0 z-0">
+    <Image
+      src="/hero-rhino1.jpeg"
+      alt="Rhino in the bushveld"
+      fill
+      priority
+      sizes="100vw"
+      className="object-cover object-center"
+    />
+  </div>
+
+  {/* Warm safari overlays (on top of image, but behind text) */}
+  <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#f6f2e8]/55 via-[#f6f2e8]/35 to-[#f6f2e8]/85" />
+  <div className="absolute inset-0 z-10 bg-[radial-gradient(60%_60%_at_20%_10%,rgba(214,199,166,0.50),transparent_70%)]" />
+  <div className="absolute inset-0 z-10 bg-[radial-gradient(50%_50%_at_80%_15%,rgba(122,140,88,0.22),transparent_70%)]" />
+
+  {/* Content */}
+  <div className="container relative z-20 py-20 md:py-28">
+    <div className="max-w-3xl">
+      <motion.h1
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-4xl md:text-6xl font-extrabold leading-tight text-[#1b1b1b]"
+      >
+        Wildlife genetics that turns{" "}
+        <span className="text-[#6b7a46]">DNA</span> into decisions.
+      </motion.h1>
+
+      <p className="mt-6 text-[#2f2f2f] text-lg md:text-xl max-w-2xl">
+        Evidence-based services for species ID, parentage, population structure,
+        and non-invasive abundance — tailored for ranches, reserves, and NGOs
+        across southern Africa.
+      </p>
+
+      <div className="mt-8 flex flex-wrap gap-3">
+        <a
+          href="#contact"
+          className="rounded-2xl px-6 py-3 bg-[#6b7a46] text-white font-semibold shadow-lg hover:translate-y-[-1px] transition"
+        >
+          Request a proposal
+        </a>
+
+        <a
+          href="#services"
+          className="rounded-2xl px-6 py-3 border border-[#6b7a46]/40 bg-white/60 hover:bg-white/80 text-[#1f1f1f]"
+        >
+          Explore services
+        </a>
+      </div>
+
+      <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-[#2f2f2f]">
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-[#6b7a46]" />
+          Non-invasive sampling experts
         </div>
-
-        {/* Warm safari overlays (lighter + earthy) */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#f6f2e8]/60 via-[#f6f2e8]/40 to-[#f6f2e8]/90" />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_20%_10%,rgba(214,199,166,0.55),transparent_70%)]" />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(50%_50%_at_80%_15%,rgba(122,140,88,0.25),transparent_70%)]" />
-
-        <div className="container py-20 md:py-28">
-          <div className="max-w-3xl">
-            <motion.h1
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl md:text-6xl font-extrabold leading-tight text-[#1b1b1b]"
-            >
-              Wildlife genetics that turns{" "}
-              <span className="text-[#6b7a46]">DNA</span> into decisions.
-            </motion.h1>
-
-            <p className="mt-6 text-[#2f2f2f] text-lg md:text-xl max-w-2xl">
-              Evidence-based services for species ID, parentage, population structure,
-              and non-invasive abundance — tailored for ranches, reserves, and NGOs
-              across southern Africa.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#contact"
-                className="rounded-2xl px-6 py-3 bg-[#6b7a46] text-white font-semibold shadow-lg hover:translate-y-[-1px] transition"
-              >
-                Request a proposal
-              </a>
-
-              <a
-                href="#services"
-                className="rounded-2xl px-6 py-3 border border-[#6b7a46]/40 bg-white/60 hover:bg-white/80 text-[#1f1f1f]"
-              >
-                Explore services
-              </a>
-            </div>
-
-            <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-[#2f2f2f]">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#6b7a46]" />
-                Non-invasive sampling experts
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#6b7a46]" />
-                Manager-ready reporting
-              </div>
-            </div>
-          </div>
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-[#6b7a46]" />
+          Manager-ready reporting
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Trust bar */}
       <section className="py-6 border-y border-black/10 bg-[#f1ebdc]">
