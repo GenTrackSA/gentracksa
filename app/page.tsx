@@ -9,12 +9,12 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#f6f2e8] text-[#1f1f1f]">
       <Navbar />
 
       {/* Hero */}
       <section className="relative overflow-hidden">
-        {/* Background image (served from /public) */}
+        {/* Background image */}
         <div className="absolute inset-0 -z-10">
           <Image
             src="/hero-rhino1.jpeg"
@@ -26,24 +26,24 @@ export default function Home() {
           />
         </div>
 
-        {/* Overlay corrections (lighter so image is visible) */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/55 via-black/35 to-[#070605]/85" />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_25%_12%,rgba(214,199,166,0.22),transparent_60%)]" />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(55%_55%_at_80%_18%,rgba(122,140,88,0.18),transparent_65%)]" />
+        {/* Warm safari overlays (lighter + earthy) */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#f6f2e8]/60 via-[#f6f2e8]/40 to-[#f6f2e8]/90" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_20%_10%,rgba(214,199,166,0.55),transparent_70%)]" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(50%_50%_at_80%_15%,rgba(122,140,88,0.25),transparent_70%)]" />
 
-        <div className="container py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
-          <div>
+        <div className="container py-20 md:py-28">
+          <div className="max-w-3xl">
             <motion.h1
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl md:text-6xl font-extrabold leading-tight"
+              className="text-4xl md:text-6xl font-extrabold leading-tight text-[#1b1b1b]"
             >
               Wildlife genetics that turns{" "}
-              <span className="text-[#d6c7a6]">DNA</span> into decisions.
+              <span className="text-[#6b7a46]">DNA</span> into decisions.
             </motion.h1>
 
-            <p className="mt-6 text-slate-200 text-lg md:text-xl max-w-xl">
+            <p className="mt-6 text-[#2f2f2f] text-lg md:text-xl max-w-2xl">
               Evidence-based services for species ID, parentage, population structure,
               and non-invasive abundance — tailored for ranches, reserves, and NGOs
               across southern Africa.
@@ -52,63 +52,49 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#contact"
-                className="rounded-2xl px-5 py-3 bg-[#d6c7a6] text-black font-semibold shadow-lg hover:translate-y-[-1px] transition"
+                className="rounded-2xl px-6 py-3 bg-[#6b7a46] text-white font-semibold shadow-lg hover:translate-y-[-1px] transition"
               >
                 Request a proposal
               </a>
+
               <a
                 href="#services"
-                className="rounded-2xl px-5 py-3 border border-[rgba(214,199,166,0.35)] text-slate-100 hover:bg-white/5"
+                className="rounded-2xl px-6 py-3 border border-[#6b7a46]/40 bg-white/60 hover:bg-white/80 text-[#1f1f1f]"
               >
                 Explore services
               </a>
             </div>
 
-            <div className="mt-8 flex items-center gap-6 text-sm text-slate-200/80">
+            <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-[#2f2f2f]">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#d6c7a6]" />
+                <span className="w-2 h-2 rounded-full bg-[#6b7a46]" />
                 Non-invasive sampling experts
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#d6c7a6]" />
+                <span className="w-2 h-2 rounded-full bg-[#6b7a46]" />
                 Manager-ready reporting
               </div>
             </div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative"
-          >
-            <div className="aspect-[4/3] rounded-3xl border border-white/10 bg-black/35 backdrop-blur-md p-6 shadow-2xl grid place-items-center">
-              <Image
-                src="/logo.png"
-                width={420}
-                height={420}
-                alt="GenTrack SA Logo"
-                className="object-contain w-64 h-64 md:w-80 md:h-80"
-              />
-            </div>
-          </motion.div>
         </div>
       </section>
 
       {/* Trust bar */}
-      <section className="py-6 border-y border-white/10 bg-black/25 backdrop-blur">
-        <div className="container flex flex-wrap items-center justify-center gap-6 text-slate-200 text-sm">
-          <span className="opacity-80">Trusted by private ranches, nature reserves & NGOs</span>
-          <span className="w-px h-4 bg-white/20" />
-          <span className="opacity-80">South Africa • Namibia • Botswana</span>
+      <section className="py-6 border-y border-black/10 bg-[#f1ebdc]">
+        <div className="container flex flex-wrap items-center justify-center gap-6 text-[#2b2b2b] text-sm">
+          <span className="opacity-90">Trusted by private ranches, nature reserves & NGOs</span>
+          <span className="w-px h-4 bg-black/20" />
+          <span className="opacity-90">South Africa • Namibia • Botswana</span>
         </div>
       </section>
 
       {/* Services */}
       <section id="services" className="container py-20">
         <div className="flex items-end justify-between mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold">Core services</h2>
-          <a href="#contact" className="text-[#d6c7a6] hover:underline">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1b1b1b]">
+            Core services
+          </h2>
+          <a href="#contact" className="text-[#6b7a46] hover:underline">
             Need something bespoke?
           </a>
         </div>
@@ -118,11 +104,11 @@ export default function Home() {
             <a
               key={f.title}
               href={f.href}
-              className="rounded-3xl p-6 border border-white/10 bg-black/25 backdrop-blur hover:bg-white/[0.06] block"
+              className="rounded-3xl p-6 border border-black/10 bg-white shadow-sm hover:shadow-md transition block"
             >
-              <h3 className="mt-1 text-xl font-semibold">{f.title}</h3>
-              <p className="mt-2 text-slate-200/80">{f.desc}</p>
-              <div className="mt-4 inline-flex items-center gap-1 text-[#d6c7a6] text-sm">
+              <h3 className="mt-1 text-xl font-semibold text-[#1b1b1b]">{f.title}</h3>
+              <p className="mt-2 text-[#3a3a3a]">{f.desc}</p>
+              <div className="mt-4 inline-flex items-center gap-1 text-[#6b7a46] text-sm font-medium">
                 Learn more →
               </div>
             </a>
@@ -132,16 +118,19 @@ export default function Home() {
 
       {/* Process */}
       <section id="process" className="container py-20">
-        <h2 className="text-3xl md:text-4xl font-bold">How we work</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#1b1b1b]">
+          How we work
+        </h2>
+
         <div className="mt-10 grid md:grid-cols-4 gap-6">
           {steps.map((s) => (
             <div
               key={s.step}
-              className="rounded-3xl p-6 border border-white/10 bg-black/20 backdrop-blur"
+              className="rounded-3xl p-6 border border-black/10 bg-[#fffdf8] shadow-sm"
             >
-              <div className="text-sm text-[#d6c7a6] font-semibold">{s.step}</div>
-              <div className="mt-2 text-xl font-semibold">{s.title}</div>
-              <p className="mt-2 text-slate-200/80">{s.text}</p>
+              <div className="text-sm text-[#6b7a46] font-semibold">{s.step}</div>
+              <div className="mt-2 text-xl font-semibold text-[#1b1b1b]">{s.title}</div>
+              <p className="mt-2 text-[#3a3a3a]">{s.text}</p>
             </div>
           ))}
         </div>
@@ -150,8 +139,10 @@ export default function Home() {
       {/* Case studies */}
       <section id="case-studies" className="container py-20">
         <div className="flex items-end justify-between">
-          <h2 className="text-3xl md:text-4xl font-bold">Selected projects</h2>
-          <span className="text-sm text-slate-200/70">Summaries available on request</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1b1b1b]">
+            Selected projects
+          </h2>
+          <span className="text-sm text-[#555]">Summaries available on request</span>
         </div>
 
         <div className="mt-8 grid md:grid-cols-3 gap-6">
@@ -162,15 +153,15 @@ export default function Home() {
           ].map((title) => (
             <article
               key={title}
-              className="group rounded-3xl overflow-hidden border border-white/10 bg-black/25 backdrop-blur"
+              className="group rounded-3xl overflow-hidden border border-black/10 bg-white shadow-sm hover:shadow-md transition"
             >
-              <div className="aspect-[16/10] bg-[radial-gradient(circle_at_70%_30%,rgba(214,199,166,0.22),transparent_60%)]" />
+              <div className="aspect-[16/10] bg-[radial-gradient(circle_at_70%_30%,rgba(214,199,166,0.55),transparent_65%)]" />
               <div className="p-6">
-                <h3 className="font-semibold">{title}</h3>
-                <p className="mt-2 text-sm text-slate-200/80">
+                <h3 className="font-semibold text-[#1b1b1b]">{title}</h3>
+                <p className="mt-2 text-sm text-[#3a3a3a]">
                   Outcomes: decision-ready estimates, method transfer, and practical protocols.
                 </p>
-                <div className="mt-4 inline-flex items-center gap-1 text-[#d6c7a6] text-sm">
+                <div className="mt-4 inline-flex items-center gap-1 text-[#6b7a46] text-sm font-medium">
                   Request summary →
                 </div>
               </div>
@@ -204,18 +195,18 @@ export default function Home() {
           ].map((p, i) => (
             <div
               key={p.name}
-              className={`rounded-3xl p-6 border backdrop-blur ${
-                i === 1 ? "border-[rgba(214,199,166,0.35)] bg-[#d6c7a6]/10" : "border-white/10 bg-black/25"
+              className={`rounded-3xl p-6 border border-black/10 shadow-sm ${
+                i === 1 ? "bg-[#6b7a46]/10" : "bg-white"
               }`}
             >
-              <div className="text-sm text-slate-200/70">{p.tagline}</div>
-              <div className="mt-1 text-2xl font-bold">{p.name}</div>
-              <div className="mt-2 text-[#d6c7a6]">{p.price}</div>
+              <div className="text-sm text-[#555]">{p.tagline}</div>
+              <div className="mt-1 text-2xl font-bold text-[#1b1b1b]">{p.name}</div>
+              <div className="mt-2 text-[#6b7a46] font-medium">{p.price}</div>
 
-              <ul className="mt-4 space-y-2 text-slate-100">
+              <ul className="mt-4 space-y-2 text-[#2b2b2b]">
                 {p.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-2">
-                    <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#d6c7a6]" />
+                    <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#6b7a46]" />
                     {b}
                   </li>
                 ))}
@@ -223,7 +214,7 @@ export default function Home() {
 
               <a
                 href="#contact"
-                className="mt-6 inline-flex rounded-xl px-4 py-2 border border-[rgba(214,199,166,0.35)] hover:bg-white/5"
+                className="mt-6 inline-flex rounded-xl px-4 py-2 border border-[#6b7a46]/40 hover:bg-[#6b7a46]/10"
               >
                 Get quote
               </a>
@@ -235,8 +226,10 @@ export default function Home() {
       {/* Blog Teaser */}
       <section id="blog" className="container py-20">
         <div className="flex items-center justify-between">
-          <h2 className="text-3xl md:text-4xl font-bold">From the blog</h2>
-          <a href="/blog" className="text-[#d6c7a6] hover:underline text-sm">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1b1b1b]">
+            From the blog
+          </h2>
+          <a href="/blog" className="text-[#6b7a46] hover:underline text-sm">
             View all posts
           </a>
         </div>
@@ -250,11 +243,13 @@ export default function Home() {
             <a
               key={p.href}
               href={p.href}
-              className="rounded-3xl p-6 border border-white/10 bg-black/25 backdrop-blur hover:bg-white/[0.06] block"
+              className="rounded-3xl p-6 border border-black/10 bg-white shadow-sm hover:shadow-md transition block"
             >
-              <h3 className="font-semibold">{p.title}</h3>
-              <p className="text-sm text-slate-200/80 mt-2">{p.excerpt}</p>
-              <div className="text-[#d6c7a6] text-sm mt-4">Read more →</div>
+              <h3 className="font-semibold text-[#1b1b1b]">{p.title}</h3>
+              <p className="text-sm text-[#3a3a3a] mt-2">{p.excerpt}</p>
+              <div className="text-[#6b7a46] text-sm mt-4 font-medium">
+                Read more →
+              </div>
             </a>
           ))}
         </div>
@@ -264,30 +259,34 @@ export default function Home() {
       <section id="contact" className="container py-20">
         <div className="grid md:grid-cols-2 gap-10">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold">Contact</h2>
-            <p className="mt-3 text-slate-200/80 max-w-lg">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1b1b1b]">Contact</h2>
+            <p className="mt-3 text-[#3a3a3a] max-w-lg">
               Tell us about your species/system, sampling context, and the decision you need to make.
               We’ll reply with options and a ballpark quote.
             </p>
 
-            <div className="mt-6 space-y-3 text-slate-100">
+            <div className="mt-6 space-y-3 text-[#2b2b2b]">
               <div className="flex items-center gap-3">
-                <span className="w-8 h-8 rounded-xl bg-white/10 grid place-content-center">📧</span>
-                <a className="hover:underline" href="mailto:GenTrackSA@gmail.com">GenTrackSA@gmail.com</a>
+                <span className="w-8 h-8 rounded-xl bg-[#6b7a46]/15 grid place-content-center">📧</span>
+                <a className="hover:underline" href="mailto:GenTrackSA@gmail.com">
+                  GenTrackSA@gmail.com
+                </a>
               </div>
 
               <div className="flex items-center gap-3">
-                <span className="w-8 h-8 rounded-xl bg-white/10 grid place-content-center">📞</span>
-                <a className="hover:underline" href="tel:+27824656983">+27 82 465 6983</a>
+                <span className="w-8 h-8 rounded-xl bg-[#6b7a46]/15 grid place-content-center">📞</span>
+                <a className="hover:underline" href="tel:+27824656983">
+                  +27 82 465 6983
+                </a>
               </div>
 
               <div className="flex items-center gap-3">
-                <span className="w-8 h-8 rounded-xl bg-white/10 grid place-content-center">🌍</span>
+                <span className="w-8 h-8 rounded-xl bg-[#6b7a46]/15 grid place-content-center">🌍</span>
                 <span>Bloemfontein, South Africa • Africa/Johannesburg</span>
               </div>
             </div>
 
-            <div className="mt-8 text-sm text-slate-200/60">
+            <div className="mt-8 text-sm text-[#555]">
               By sending this form you agree to be contacted about your enquiry.
             </div>
           </div>
@@ -334,55 +333,56 @@ function ContactForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-3xl p-6 border border-white/10 bg-black/25 backdrop-blur"
+      className="rounded-3xl p-6 border border-black/10 bg-white shadow-sm"
     >
       <div className="grid grid-cols-1 gap-4">
-        <label className="text-sm text-slate-100">
+        <label className="text-sm text-[#2b2b2b]">
           Your name
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="e.g. Dr Mokoena"
-            className="mt-1 w-full rounded-xl bg-black/40 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-[rgba(214,199,166,0.5)]"
+            className="mt-1 w-full rounded-xl bg-[#f6f2e8] border border-black/10 px-4 py-3 outline-none focus:ring-2 focus:ring-[#6b7a46]/40"
           />
         </label>
 
-        <label className="text-sm text-slate-100">
+        <label className="text-sm text-[#2b2b2b]">
           Email
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@example.com"
-            className="mt-1 w-full rounded-xl bg-black/40 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-[rgba(214,199,166,0.5)]"
+            className="mt-1 w-full rounded-xl bg-[#f6f2e8] border border-black/10 px-4 py-3 outline-none focus:ring-2 focus:ring-[#6b7a46]/40"
           />
         </label>
 
-        <label className="text-sm text-slate-100">
+        <label className="text-sm text-[#2b2b2b]">
           Message
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             rows={5}
             placeholder="What problem are you trying to solve?"
-            className="mt-1 w-full rounded-2xl bg-black/40 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-[rgba(214,199,166,0.5)]"
+            className="mt-1 w-full rounded-2xl bg-[#f6f2e8] border border-black/10 px-4 py-3 outline-none focus:ring-2 focus:ring-[#6b7a46]/40"
           />
         </label>
 
         <button
           disabled={status === "loading"}
-          className="mt-2 rounded-2xl px-5 py-3 bg-[#d6c7a6] text-black font-semibold disabled:opacity-70"
+          className="mt-2 rounded-2xl px-5 py-3 bg-[#6b7a46] text-white font-semibold disabled:opacity-70"
         >
           {status === "loading" ? "Sending..." : "Send message"}
         </button>
 
         {status === "sent" && (
-          <p className="text-[#d6c7a6]">
+          <p className="text-[#6b7a46] font-medium">
             Thank you! We’ll be in touch at the email you provided.
           </p>
         )}
+
         {status === "error" && (
-          <p className="text-red-300">
+          <p className="text-red-600 font-medium">
             Sorry, something went wrong. Please email us directly.
           </p>
         )}
