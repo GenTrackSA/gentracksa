@@ -12,202 +12,81 @@ export default function Home() {
     <div className="min-h-screen bg-[#f6f2e8] text-[#1f1f1f]">
       <Navbar />
 
-{/* Hero */}
-<section className="relative overflow-hidden isolate">
-  {/* Background image */}
-  <div className="absolute inset-0 z-0">
-    <Image
-      src="/hero-rhino1.jpeg"
-      alt="Rhino in the bushveld"
-      fill
-      priority
-      sizes="100vw"
-      className="object-cover object-center brightness-110 contrast-125 saturate-125"
-    />
-  </div>
+      {/* Hero */}
+      <section className="relative overflow-hidden isolate">
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero-rhino1.jpeg"
+            alt="Rhino in the bushveld"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center brightness-110 contrast-125 saturate-125"
+          />
+        </div>
 
-  {/* Warm safari overlays (on top of image, but behind text) */}
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import JsonLd from "@/components/JsonLd";
+        {/* Warm overlays (lighter so image stays clear) */}
+        <div className="absolute inset-0 z-10 bg-black/10" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/45 via-black/25 to-[#080706]/55" />
+        <div className="absolute inset-0 z-10 bg-[radial-gradient(60%_60%_at_25%_10%,rgba(214,199,166,0.18),transparent_65%)]" />
+        <div className="absolute inset-0 z-10 bg-[radial-gradient(50%_50%_at_80%_15%,rgba(122,140,88,0.14),transparent_70%)]" />
 
-const url = "https://www.gentracksa.co.za/services/species-identification";
+        {/* Content */}
+        <div className="container relative z-20 py-20 md:py-28">
+          <div className="max-w-3xl">
+            <motion.h1
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-6xl font-extrabold leading-tight text-white"
+            >
+              Wildlife genetics that turns{" "}
+              <span className="text-amber-200">DNA</span> into decisions.
+            </motion.h1>
 
-export default function SpeciesIdentification() {
-  return (
-    <div className="min-h-screen">
-      <Navbar />
-
-      {/* Warm safari background wash */}
-      <div className="pointer-events-none fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-[#f6f2e8]" />
-        <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_20%_10%,rgba(214,199,166,0.35),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(50%_50%_at_85%_20%,rgba(122,140,88,0.18),transparent_65%)]" />
-      </div>
-
-      {/* Breadcrumbs JSON-LD */}
-      <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            {
-              "@type": "ListItem",
-              position: 1,
-              name: "Services",
-              item: "https://www.gentracksa.co.za/services",
-            },
-            {
-              "@type": "ListItem",
-              position: 2,
-              name: "Species Identification",
-              item: url,
-            },
-          ],
-        }}
-      />
-
-      {/* Service JSON-LD */}
-      <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: "Species Identification",
-          url,
-          description:
-            "DNA-based species confirmation and hybrid detection using mitochondrial and nuclear markers for compliance, trade, and forensic use.",
-          provider: {
-            "@type": "Organization",
-            name: "Gen-Track SA",
-            url: "https://www.gentracksa.co.za",
-          },
-          areaServed: { "@type": "Country", name: "South Africa" },
-          serviceType: "Wildlife genetics testing",
-          brand: { "@type": "Brand", name: "Gen-Track SA" },
-        }}
-      />
-
-      <main className="container py-14 md:py-16">
-        <article className="mx-auto max-w-3xl">
-          <div className="rounded-3xl border border-black/10 bg-white/70 backdrop-blur p-7 md:p-10 shadow-sm">
-            <p className="text-sm font-medium text-[#6b7a46]">Service</p>
-
-            <h1 className="mt-2 text-3xl md:text-4xl font-bold text-[#1b1b1b]">
-              Species Identification
-            </h1>
-
-            <p className="mt-4 text-[17px] leading-relaxed text-[#3a3a3a]">
-              Confirm wildlife species with confidence using validated genetic markers. We support species
-              verification, hybrid detection, and forensic-style identification for management decisions,
-              compliance, and high-value animal transactions.
+            <p className="mt-6 text-white/85 text-lg md:text-xl max-w-2xl">
+              Evidence-based services for species ID, parentage, population
+              structure, and non-invasive abundance — tailored for ranches,
+              reserves, and NGOs across southern Africa.
             </p>
 
-            <section className="mt-8">
-              <h2 className="text-xl font-semibold text-[#1b1b1b]">Common Use Cases</h2>
-              <div className="mt-3 grid gap-3">
-                {[
-                  "Hybrid detection in antelope and other game species.",
-                  "Trade and permitting support (including CITES-style documentation workflows).",
-                  "Forensic identification of tissue, horn, hair, or unknown wildlife material.",
-                  "Verification before auction, translocation, or introduction into breeding programs.",
-                ].map((x) => (
-                  <div
-                    key={x}
-                    className="rounded-2xl border border-black/10 bg-white/60 px-4 py-3 text-[#2b2b2b]"
-                  >
-                    {x}
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section className="mt-8">
-              <h2 className="text-xl font-semibold text-[#1b1b1b]">What You Receive</h2>
-              <ul className="mt-3 list-disc pl-5 text-[#3a3a3a] space-y-2">
-                <li>Species call with a short interpretation summary.</li>
-                <li>Hybrid screening where relevant markers are available.</li>
-                <li>Sample list + results table for your records.</li>
-                <li>Manager-ready PDF report (suitable for compliance packs).</li>
-              </ul>
-            </section>
-
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="/#contact"
-                className="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-[#6b7a46] text-white font-semibold shadow-sm hover:opacity-95 transition"
+                href="#contact"
+                className="rounded-2xl px-6 py-3 bg-amber-200 text-[#1f1f1f] font-semibold shadow-lg hover:translate-y-[-1px] transition"
               >
-                Request species verification
+                Request a proposal
               </a>
 
               <a
-                href="/services"
-                className="inline-flex items-center justify-center rounded-2xl px-5 py-3 border border-black/15 bg-white/50 text-[#1b1b1b] font-semibold hover:bg-white/70 transition"
+                href="#services"
+                className="rounded-2xl px-6 py-3 border border-white/40 bg-white/10 hover:bg-white/20 text-white"
               >
-                Back to services
+                Explore services
               </a>
             </div>
+
+            <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-white/80">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-amber-200" />
+                Non-invasive sampling experts
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-amber-200" />
+                Manager-ready reporting
+              </div>
+            </div>
           </div>
-        </article>
-      </main>
-
-      <Footer />
-    </div>
-  );
-}
-
-  {/* Content */}
-  <div className="container relative z-20 py-20 md:py-28">
-    <div className="max-w-3xl">
-      <motion.h1
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl md:text-6xl font-extrabold leading-tight text-[#1b1b1b]"
-      >
-        Wildlife genetics that turns{" "}
-        <span className="text-[#6b7a46]">DNA</span> into decisions.
-      </motion.h1>
-
-      <p className="mt-6 text-[#2f2f2f] text-lg md:text-xl max-w-2xl">
-        Evidence-based services for species ID, parentage, population structure,
-        and non-invasive abundance — tailored for ranches, reserves, and NGOs
-        across southern Africa.
-      </p>
-
-      <div className="mt-8 flex flex-wrap gap-3">
-        <a
-          href="#contact"
-          className="rounded-2xl px-6 py-3 bg-[#6b7a46] text-white font-semibold shadow-lg hover:translate-y-[-1px] transition"
-        >
-          Request a proposal
-        </a>
-
-        <a
-          href="#services"
-          className="rounded-2xl px-6 py-3 border border-[#6b7a46]/40 bg-white/60 hover:bg-white/80 text-[#1f1f1f]"
-        >
-          Explore services
-        </a>
-      </div>
-
-      <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-[#2f2f2f]">
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[#6b7a46]" />
-          Non-invasive sampling experts
         </div>
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[#6b7a46]" />
-          Manager-ready reporting
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Trust bar */}
       <section className="py-6 border-y border-black/10 bg-[#f1ebdc]">
         <div className="container flex flex-wrap items-center justify-center gap-6 text-[#2b2b2b] text-sm">
-          <span className="opacity-90">Trusted by private ranches, nature reserves & NGOs</span>
+          <span className="opacity-90">
+            Trusted by private ranches, nature reserves & NGOs
+          </span>
           <span className="w-px h-4 bg-black/20" />
           <span className="opacity-90">South Africa • Namibia • Botswana</span>
         </div>
@@ -231,7 +110,9 @@ export default function SpeciesIdentification() {
               href={f.href}
               className="rounded-3xl p-6 border border-black/10 bg-white shadow-sm hover:shadow-md transition block"
             >
-              <h3 className="mt-1 text-xl font-semibold text-[#1b1b1b]">{f.title}</h3>
+              <h3 className="mt-1 text-xl font-semibold text-[#1b1b1b]">
+                {f.title}
+              </h3>
               <p className="mt-2 text-[#3a3a3a]">{f.desc}</p>
               <div className="mt-4 inline-flex items-center gap-1 text-[#6b7a46] text-sm font-medium">
                 Learn more →
@@ -253,8 +134,12 @@ export default function SpeciesIdentification() {
               key={s.step}
               className="rounded-3xl p-6 border border-black/10 bg-[#fffdf8] shadow-sm"
             >
-              <div className="text-sm text-[#6b7a46] font-semibold">{s.step}</div>
-              <div className="mt-2 text-xl font-semibold text-[#1b1b1b]">{s.title}</div>
+              <div className="text-sm text-[#6b7a46] font-semibold">
+                {s.step}
+              </div>
+              <div className="mt-2 text-xl font-semibold text-[#1b1b1b]">
+                {s.title}
+              </div>
               <p className="mt-2 text-[#3a3a3a]">{s.text}</p>
             </div>
           ))}
@@ -269,19 +154,34 @@ export default function SpeciesIdentification() {
               name: "Starter",
               tagline: "Small pilots & confirmations",
               price: "Project-based",
-              bullets: ["Species ID / single assay", "Up to 10 samples", "1–2 week timeline", "Manager-ready PDF"],
+              bullets: [
+                "Species ID / single assay",
+                "Up to 10 samples",
+                "1–2 week timeline",
+                "Manager-ready PDF",
+              ],
             },
             {
               name: "Standard",
               tagline: "Most conservation projects",
               price: "Project-based",
-              bullets: ["Parentage / population study", "10–100 samples", "Study design + analysis", "Report + debrief call"],
+              bullets: [
+                "Parentage / population study",
+                "10–100 samples",
+                "Study design + analysis",
+                "Report + debrief call",
+              ],
             },
             {
               name: "Enterprise",
               tagline: "Large, multi-site programs",
               price: "Custom",
-              bullets: [">100 samples / annual MSA", "Permits & logistics", "Dashboards & GIS", "On-site training"],
+              bullets: [
+                ">100 samples / annual MSA",
+                "Permits & logistics",
+                "Dashboards & GIS",
+                "On-site training",
+              ],
             },
           ].map((p, i) => (
             <div
@@ -291,7 +191,9 @@ export default function SpeciesIdentification() {
               }`}
             >
               <div className="text-sm text-[#555]">{p.tagline}</div>
-              <div className="mt-1 text-2xl font-bold text-[#1b1b1b]">{p.name}</div>
+              <div className="mt-1 text-2xl font-bold text-[#1b1b1b]">
+                {p.name}
+              </div>
               <div className="mt-2 text-[#6b7a46] font-medium">{p.price}</div>
 
               <ul className="mt-4 space-y-2 text-[#2b2b2b]">
@@ -327,9 +229,24 @@ export default function SpeciesIdentification() {
 
         <div className="grid md:grid-cols-3 gap-6 mt-8">
           {[
-            { title: "How reliable is NIGS for abundance?", href: "/blog/nigs-reliability", excerpt: "Key pitfalls and design tips for faecal DNA capture–recapture." },
-            { title: "Parentage testing 101 for game ranches", href: "/blog/parentage-101", excerpt: "Microsats vs SNPs, sampling, and what reports should include." },
-            { title: "Getting started with eDNA in arid systems", href: "/blog/edna-arid", excerpt: "When, where, and how to deploy water eDNA in drylands." },
+            {
+              title: "How reliable is NIGS for abundance?",
+              href: "/blog/nigs-reliability",
+              excerpt:
+                "Key pitfalls and design tips for faecal DNA capture–recapture.",
+            },
+            {
+              title: "Parentage testing 101 for game ranches",
+              href: "/blog/parentage-101",
+              excerpt:
+                "Microsats vs SNPs, sampling, and what reports should include.",
+            },
+            {
+              title: "Getting started with eDNA in arid systems",
+              href: "/blog/edna-arid",
+              excerpt:
+                "When, where, and how to deploy water eDNA in drylands.",
+            },
           ].map((p) => (
             <a
               key={p.href}
@@ -350,29 +267,38 @@ export default function SpeciesIdentification() {
       <section id="contact" className="container py-20">
         <div className="grid md:grid-cols-2 gap-10">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1b1b1b]">Contact</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1b1b1b]">
+              Contact
+            </h2>
             <p className="mt-3 text-[#3a3a3a] max-w-lg">
-              Tell us about your species/system, sampling context, and the decision you need to make.
-              We’ll reply with options and a ballpark quote.
+              Tell us about your species/system, sampling context, and the
+              decision you need to make. We’ll reply with options and a
+              ballpark quote.
             </p>
 
             <div className="mt-6 space-y-3 text-[#2b2b2b]">
               <div className="flex items-center gap-3">
-                <span className="w-8 h-8 rounded-xl bg-[#6b7a46]/15 grid place-content-center">📧</span>
+                <span className="w-8 h-8 rounded-xl bg-[#6b7a46]/15 grid place-content-center">
+                  📧
+                </span>
                 <a className="hover:underline" href="mailto:GenTrackSA@gmail.com">
                   GenTrackSA@gmail.com
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
-                <span className="w-8 h-8 rounded-xl bg-[#6b7a46]/15 grid place-content-center">📞</span>
+                <span className="w-8 h-8 rounded-xl bg-[#6b7a46]/15 grid place-content-center">
+                  📞
+                </span>
                 <a className="hover:underline" href="tel:+27824656983">
                   +27 82 465 6983
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
-                <span className="w-8 h-8 rounded-xl bg-[#6b7a46]/15 grid place-content-center">🌍</span>
+                <span className="w-8 h-8 rounded-xl bg-[#6b7a46]/15 grid place-content-center">
+                  🌍
+                </span>
                 <span>Bloemfontein, South Africa • Africa/Johannesburg</span>
               </div>
             </div>
