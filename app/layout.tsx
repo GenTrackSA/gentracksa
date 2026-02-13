@@ -11,7 +11,14 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  return (
+    <html lang="en">
+      <body className="min-h-screen bg-[#f6f2e8] text-[#1f1f1f]">
+        {children}
+      </body>
+    </html>
+  );
+}
 
   return (
     <html lang="en">
