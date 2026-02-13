@@ -26,11 +26,10 @@ export default function Home() {
           />
         </div>
 
-        {/* Warm overlays (lighter so image stays clear) */}
-        <div className="absolute inset-0 z-10 bg-black/10" />
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/45 via-black/25 to-[#080706]/55" />
-        <div className="absolute inset-0 z-10 bg-[radial-gradient(60%_60%_at_25%_10%,rgba(214,199,166,0.18),transparent_65%)]" />
-        <div className="absolute inset-0 z-10 bg-[radial-gradient(50%_50%_at_80%_15%,rgba(122,140,88,0.14),transparent_70%)]" />
+        {/* Warm overlays for readability + safari feel */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/55 via-black/35 to-[#080706]/70" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_25%_10%,rgba(214,199,166,0.18),transparent_65%)]" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(50%_50%_at_80%_15%,rgba(122,140,88,0.14),transparent_70%)]" />
 
         {/* Content */}
         <div className="container relative z-20 py-20 md:py-28">
