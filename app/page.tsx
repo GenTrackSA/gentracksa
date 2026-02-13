@@ -16,7 +16,6 @@ export default function Home() {
       <section className="relative overflow-hidden isolate">
         {/* Background image */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 -z-10 bg-black/10" />
           <Image
             src="/hero-rhino1.jpeg"
             alt="Rhino in the bushveld"
