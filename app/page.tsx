@@ -22,14 +22,14 @@ export default function Home() {
       fill
       priority
       sizes="100vw"
-      className="object-cover object-center"
+      className="object-cover object-center brightness-110 contrast-125 saturate-125"
     />
   </div>
 
   {/* Warm safari overlays (on top of image, but behind text) */}
-<div className="absolute inset-0 z-10 bg-gradient-to-b from-black/20 via-transparent to-[#f6f2e8]/55" />
-<div className="absolute inset-0 z-10 bg-[radial-gradient(60%_60%_at_20%_10%,rgba(214,199,166,0.22),transparent_75%)]" />
-<div className="absolute inset-0 z-10 bg-[radial-gradient(50%_50%_at_80%_15%,rgba(122,140,88,0.14),transparent_75%)]" />
+<div className="absolute inset-0 z-10 bg-gradient-to-b from-black/15 via-transparent to-[#f6f2e8]/45" />
+<div className="absolute inset-0 z-10 bg-[radial-gradient(60%_60%_at_20%_10%,rgba(214,199,166,0.12),transparent_80%)]" />
+<div className="absolute inset-0 z-10 bg-[radial-gradient(50%_50%_at_80%_15%,rgba(122,140,88,0.10),transparent_80%)]" />
 
   {/* Content */}
   <div className="container relative z-20 py-20 md:py-28">
