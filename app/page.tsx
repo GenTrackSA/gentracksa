@@ -13,72 +13,72 @@ export default function Home() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden isolate">
-        {/* Background image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/hero-rhino1.jpeg"
-            alt="Rhino in the bushveld"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center brightness-110 contrast-125 saturate-125"
-          />
+<section className="relative overflow-hidden isolate">
+  {/* Background image */}
+  <div className="absolute inset-0 z-0">
+    <Image
+      src="/hero-rhino1.jpeg"
+      alt="Rhino in the bushveld"
+      fill
+      priority
+      sizes="100vw"
+      className="object-cover object-center brightness-110 contrast-125 saturate-125"
+    />
+  </div>
+
+  {/* Warm overlays (KEEP AS BEFORE) */}
+  <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/55 via-black/35 to-[#080706]/70" />
+  <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_25%_10%,rgba(214,199,166,0.18),transparent_65%)]" />
+  <div className="absolute inset-0 -z-10 bg-[radial-gradient(50%_50%_at_80%_15%,rgba(122,140,88,0.14),transparent_70%)]" />
+
+  {/* Content */}
+  <div className="container relative z-20 py-20 md:py-28">
+    <div className="max-w-3xl">
+      <motion.h1
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-4xl md:text-6xl font-extrabold leading-tight text-[#f5ead7] drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]"
+      >
+        Wildlife genetics that turns{" "}
+        <span className="text-amber-200">DNA</span> into decisions.
+      </motion.h1>
+
+      <p className="mt-6 text-[#f1e6d6]/90 text-lg md:text-xl max-w-2xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]">
+        Evidence-based services for species ID, parentage, population structure,
+        and non-invasive abundance — tailored for ranches, reserves, and NGOs
+        across southern Africa.
+      </p>
+
+      <div className="mt-8 flex flex-wrap gap-3">
+        <a
+          href="#contact"
+          className="rounded-2xl px-6 py-3 bg-amber-200 text-[#1f1f1f] font-semibold shadow-lg hover:translate-y-[-1px] transition"
+        >
+          Request a proposal
+        </a>
+
+        <a
+          href="#services"
+          className="rounded-2xl px-6 py-3 border border-white/40 bg-white/10 hover:bg-white/20 text-[#f5ead7] font-semibold drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]"
+        >
+          Explore services
+        </a>
+      </div>
+
+      <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-[#f1e6d6]/85 drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]">
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-amber-200" />
+          Non-invasive sampling experts
         </div>
-
-          {/* Warm overlays (lighter so image stays visible) */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/55 via-black/35 to-[#080706]/70" />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_25%_10%,rgba(214,199,166,0.18),transparent_65%)]" />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(50%_50%_at_80%_15%,rgba(122,140,88,0.14),transparent_70%)]" />
-
-        {/* Content */}
-        <div className="container relative z-20 py-20 md:py-28">
-          <div className="max-w-3xl">
-            <motion.h1
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl md:text-6xl font-extrabold leading-tight text-white"
-            >
-              Wildlife genetics that turns{" "}
-              <span className="text-amber-200">DNA</span> into decisions.
-            </motion.h1>
-
-            <p className="mt-6 text-white/85 text-lg md:text-xl max-w-2xl">
-              Evidence-based services for species ID, parentage, population
-              structure, and non-invasive abundance — tailored for ranches,
-              reserves, and NGOs across southern Africa.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#contact"
-                className="rounded-2xl px-6 py-3 bg-amber-200 text-[#1f1f1f] font-semibold shadow-lg hover:translate-y-[-1px] transition"
-              >
-                Request a proposal
-              </a>
-
-              <a
-                href="#services"
-                className="rounded-2xl px-6 py-3 border border-white/40 bg-white/10 hover:bg-white/20 text-white"
-              >
-                Explore services
-              </a>
-            </div>
-
-            <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-white/80">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-amber-200" />
-                Non-invasive sampling experts
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-amber-200" />
-                Manager-ready reporting
-              </div>
-            </div>
-          </div>
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-amber-200" />
+          Manager-ready reporting
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Trust bar */}
       <section className="py-6 border-y border-black/10 bg-[#f1ebdc]">
