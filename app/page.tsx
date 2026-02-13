@@ -137,40 +137,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Case studies */}
-      <section id="case-studies" className="container py-20">
-        <div className="flex items-end justify-between">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1b1b1b]">
-            Selected projects
-          </h2>
-          <span className="text-sm text-[#555]">Summaries available on request</span>
-        </div>
-
-        <div className="mt-8 grid md:grid-cols-3 gap-6">
-          {[
-            "Non-invasive kudu abundance (NIGS + POPAN)",
-            "Parentage testing for sable herd",
-            "eDNA detection of rare amphibian",
-          ].map((title) => (
-            <article
-              key={title}
-              className="group rounded-3xl overflow-hidden border border-black/10 bg-white shadow-sm hover:shadow-md transition"
-            >
-              <div className="aspect-[16/10] bg-[radial-gradient(circle_at_70%_30%,rgba(214,199,166,0.55),transparent_65%)]" />
-              <div className="p-6">
-                <h3 className="font-semibold text-[#1b1b1b]">{title}</h3>
-                <p className="mt-2 text-sm text-[#3a3a3a]">
-                  Outcomes: decision-ready estimates, method transfer, and practical protocols.
-                </p>
-                <div className="mt-4 inline-flex items-center gap-1 text-[#6b7a46] text-sm font-medium">
-                  Request summary →
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
       {/* Pricing */}
       <section id="pricing" className="container py-20">
         <div className="grid md:grid-cols-3 gap-6">
