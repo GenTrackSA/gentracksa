@@ -40,7 +40,7 @@ export default function BlogIndex() {
           <p className="text-sm font-medium text-[#6b7a46]">Blog</p>
           <h1 className="mt-2 text-4xl font-bold text-[#1b1b1b]">Practical notes from the field & lab</h1>
           <p className="mt-3 text-[#3a3a3a]">
-            Short, manager-friendly explainers on genetics, sampling, and decision-ready reporting.
+            All you need to know about wildlife genetic testing and population management.
           </p>
         </div>
 
