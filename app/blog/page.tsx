@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const posts = [
-  { slug: "nigs-reliability", title: "How reliable is NIGS for abundance?", excerpt: "Key pitfalls and design tips for faecal DNA capture–recapture.", date: "2025-01-10" },
+  { slug: "why nigs", title: "Why is non-invasive genetic sampling so useful?", excerpt: "Key benefits of using NIGS in wildlife and conservation management.", date: "2025-02-18" },
   { slug: "parentage-101", title: "Parentage testing 101 for game ranches", excerpt: "Microsats vs SNPs, sampling, and what reports should include.", date: "2025-01-24" },
   { slug: "edna-arid", title: "Getting started with eDNA in arid systems", excerpt: "When, where, and how to deploy water eDNA in drylands.", date: "2025-02-02" },
 ];
