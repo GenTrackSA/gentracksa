@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 const posts = [
   {
-    slug: "why-nigs",
+    slug: "nigs-reliability",
     title: "Why is non-invasive genetic sampling so useful?",
     excerpt: "Key benefits of using NIGS in wildlife and conservation management.",
     date: "2025-02-18",
